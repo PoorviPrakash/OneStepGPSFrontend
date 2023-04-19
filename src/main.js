@@ -42,7 +42,7 @@ const store = createStore({
   },
   actions: {
     async getDataFromServer(context) {
-      let data = await axios.get('http://3.101.22.26:8000/devices')
+      let data = await axios.get('http://0.0.0.0:8000/devices')
       //   console.log(data)
       if (data.status == 200) {
         context.commit('addToList', data.data.result_list)
@@ -60,7 +60,7 @@ const store = createStore({
         }
       })
       console.log(list)
-      let data = await axios.post('http://3.101.22.26:8000/hideDevice', list)
+      let data = await axios.post('http://0.0.0.0:8000/hideDevice', list)
       if (data.status == 201) {
         console.log('Pushed Hidden Devices to DB')
       }
@@ -77,7 +77,7 @@ const store = createStore({
         }
       })
       console.log(list)
-      let data = await axios.post('http://3.101.22.26:8000/pinDevice', list)
+      let data = await axios.post('http://0.0.0.0:8000/pinDevice', list)
       if (data.status == 201) {
         console.log('Pushed Pinned Devices to DB')
       }

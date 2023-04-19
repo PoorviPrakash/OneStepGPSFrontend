@@ -16,7 +16,6 @@
         <div class="col-2 align-self-center">
           <div>
             <img v-if="this.pinned" src="src/assets/push-pin-blue.png" />
-            <img v-else src="src/assets/push-pin-grey.png" />
           </div>
         </div>
       </div>
